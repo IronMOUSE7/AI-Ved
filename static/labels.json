@@ -1,0 +1,75 @@
+{
+  "name": { "en": "Name", "hi": "नाम", "pa": "ਨਾਮ" },
+  "age": { "en": "Age", "hi": "उम्र", "pa": "ਉਮਰ" },
+  "gender": { "en": "Gender", "hi": "लिंग", "pa": "ਲਿੰਗ" },
+  "location": { "en": "Location (Pincode / Village)", "hi": "स्थान (पिनकोड / गाँव)", "pa": "ਸਥਾਨ (ਪਿੰਨਕੋਡ / ਪਿੰਡ)" },
+  "history": { "en": "Known Medical History", "hi": "ज्ञात चिकित्सा इतिहास", "pa": "ਜਾਣਿਆ ਗਿਆ ਮੈਡੀਕਲ ਇਤਿਹਾਸ" },
+  "symptoms": { "en": "Enter symptoms", "hi": "लक्षण दर्ज करें", "pa": "ਲੱਛਣ ਦਰਜ ਕਰੋ" },
+  "submit": { "en": "Get Advice", "hi": "सलाह प्राप्त करें", "pa": "ਸਲਾਹ ਲਵੋ" },
+
+  "username": { "en": "Username", "hi": "उपयोगकर्ता नाम", "pa": "ਯੂਜ਼ਰਨੇਮ" },
+  "password": { "en": "Password", "hi": "पासवर्ड", "pa": "ਪਾਸਵਰਡ" },
+  "login": { "en": "Login", "hi": "लॉगिन करें", "pa": "ਲਾਗਇਨ" },
+  "username_placeholder": {
+    "en": "Enter your username",
+    "hi": "अपना उपयोगकर्ता नाम दर्ज करें",
+    "pa": "ਆਪਣਾ ਯੂਜ਼ਰਨੇਮ ਦਰਜ ਕਰੋ"
+  },
+  "password_placeholder": {
+    "en": "Enter your password",
+    "hi": "अपना पासवर्ड दर्ज करें",
+    "pa": "ਆਪਣਾ ਪਾਸਵਰਡ ਦਰਜ ਕਰੋ"
+  },
+  "loading_text": {
+    "en": "Verifying your credentials...",
+    "hi": "आपकी जानकारी सत्यापित की जा रही है...",
+    "pa": "ਤੁਹਾਡੀ ਜਾਣਕਾਰੀ ਦੀ ਜਾਂਚ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ..."
+  },
+
+  "diagnosis": { "en": "Possible Diagnosis", "hi": "संभावित निदान", "pa": "ਸੰਭਾਵਿਤ ਨਿਰੀਖਣ" },
+  "precautions": { "en": "Precautions", "hi": "सावधानियां", "pa": "ਸਾਵਧਾਨੀਆਂ" },
+  "remedies": { "en": "Home Remedies", "hi": "घरेलू उपाय", "pa": "ਘਰੇਲੂ ਇਲਾਜ" },
+  "nearby": { "en": "Nearby Medical Help", "hi": "नज़दीकी चिकित्सा सहायता", "pa": "ਨੇੜਲੇ ਡਾਕਟਰੀ ਸਹਾਇਤਾ" },
+  "back_home": { "en": "Back to Home", "hi": "होम पर वापस जाएं", "pa": "ਮੁੱਖ ਸਫੇ 'ਤੇ ਵਾਪਸ ਜਾਓ" },
+
+  "patient_info": {
+    "en": "Patient Information",
+    "hi": "मरीज की जानकारी",
+    "pa": "ਮਰੀਜ਼ ਦੀ ਜਾਣਕਾਰੀ"
+  },
+  "symptoms_heading": {
+    "en": "Symptoms",
+    "hi": "लक्षण",
+    "pa": "ਲੱਛਣ"
+  },
+  "upload_photo": {
+    "en": "Upload Photo (skin/rash etc.)",
+    "hi": "फोटो अपलोड करें (त्वचा/चकत्ते आदि)",
+    "pa": "ਤਸਵੀਰ ਅੱਪਲੋਡ ਕਰੋ (ਚਮੜੀ/ਖਜਲੀ ਆਦਿ)"
+  },
+  "submit_button": {
+    "en": "Get Advice",
+    "hi": "सलाह प्राप्त करें",
+    "pa": "ਸਲਾਹ ਲਵੋ"
+  },
+  "summary_title": {
+    "en": "AI Diagnosis Summary",
+    "hi": "एआई निदान सारांश",
+    "pa": "ਏਆਈ ਨਿਰੀਖਣ ਸੰਖੇਪ"
+  },
+  "summary_subtext": {
+    "en": "Based on your inputs, here's what we suggest:",
+    "hi": "आपकी जानकारी के आधार पर, हम यह सुझाव देते हैं:",
+    "pa": "ਤੁਹਾਡੀ ਜਾਣਕਾਰੀ ਦੇ ਅਧਾਰ 'ਤੇ, ਅਸੀਂ ਇਹ ਸੁਝਾਅ ਦਿੰਦੇ ਹਾਂ:"
+  },
+  "page_subtitle": {
+    "en": "Your Smart Rural Health Assistant",
+    "hi": "आपका स्मार्ट ग्रामीण स्वास्थ्य सहायक",
+    "pa": "ਤੁਹਾਡਾ ਸਮਾਰਟ ਪਿੰਡਾ ਸਿਹਤ ਸਹਾਇਕ"
+  },
+  "dark_mode": {
+    "en": "Dark Mode",
+    "hi": "डार्क मोड",
+    "pa": "ਡਾਰਕ ਮੋਡ"
+  }
+}
