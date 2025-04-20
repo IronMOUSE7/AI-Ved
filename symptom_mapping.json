@@ -1,0 +1,923 @@
+{
+  "fever": {
+    "synonyms": [
+      "fever",
+      "बुखार",
+      "ਤਾਪ",
+      "high temperature",
+      "pyrexia",
+      "temperature",
+      "hot",
+      "ਬੁਖਾਰ"
+    ],
+    "mapped_term": "fever",
+    "severity": "moderate",
+    "diagnosis": {
+      "en": "You may have a fever, which could be due to a viral or bacterial infection.",
+      "hi": "आपको बुखार हो सकता है, जो वायरल या बैक्टीरियल संक्रमण के कारण हो सकता है।",
+      "pa": "ਤੁਹਾਨੂੰ ਬੁਖਾਰ ਹੋ ਸਕਦਾ ਹੈ, ਜੋ ਵਾਇਰਲ ਜਾਂ ਬੈਕਟੀਰੀਅਲ ਇਨਫੈਕਸ਼ਨ ਦੇ ਕਾਰਨ ਹੋ ਸਕਦਾ ਹੈ।"
+    },
+    "precautions": {
+      "en": [
+        "Rest well",
+        "Stay hydrated",
+        "Monitor temperature regularly",
+        "Avoid crowded places"
+      ],
+      "hi": [
+        "आराम करें",
+        "पर्याप्त पानी पिएं",
+        "नियमित रूप से तापमान की निगरानी करें",
+        "भीड़भाड़ वाली जगहों से बचें"
+      ],
+      "pa": [
+        "ਆਰਾਮ ਕਰੋ",
+        "ਪਾਣੀ ਪੀਓ",
+        "ਨਿਯਮਤ ਤੌਰ 'ਤੇ ਤਾਪਮਾਨ ਦੀ ਨਿਗਰਾਨੀ ਕਰੋ",
+        "ਭੀੜ ਵਾਲੀਆਂ ਥਾਵਾਂ ਤੋਂ ਬਚੋ"
+      ]
+    },
+    "remedies": {
+      "en": [
+        "Take paracetamol as directed",
+        "Use cold compress",
+        "Drink warm fluids",
+        "Take a lukewarm bath"
+      ],
+      "hi": [
+        "निर्देशानुसार पैरासिटामोल लें",
+        "ठंडे पानी की पट्टी लगाएं",
+        "गर्म तरल पदार्थ पिएं",
+        "गुनगुने पानी से नहाएं"
+      ],
+      "pa": [
+        "ਨਿਰਦੇਸ਼ ਅਨੁਸਾਰ ਪੈਰਾਸਿਟਾਮੋਲ ਲਓ",
+        "ਠੰਡੇ ਪਾਣੀ ਦੀ ਪੱਟੀ ਲਗਾਓ",
+        "ਗਰਮ ਤਰਲ ਪਦਾਰਥ ਪੀਓ",
+        "ਗੁਨਗੁਨੇ ਪਾਣੀ ਨਾਲ ਨਹਾਓ"
+      ]
+    }
+  },
+  "cold": {
+    "synonyms": [
+      "cold",
+      "जुकाम",
+      "ਠੰਡ",
+      "runny nose",
+      "nasal congestion"
+    ],
+    "mapped_term": "cold",
+    "severity": "mild",
+    "diagnosis": {
+      "en": "Common Cold",
+      "hi": "सामान्य जुकाम",
+      "pa": "ਆਮ ਠੰਡ"
+    },
+    "precautions": {
+      "en": [
+        "Avoid cold drinks",
+        "Keep yourself warm",
+        "Use a handkerchief"
+      ],
+      "hi": [
+        "ठंडी चीजें न लें",
+        "खुद को गर्म रखें",
+        "रूमाल का इस्तेमाल करें"
+      ],
+      "pa": [
+        "ਠੰਢੀਆਂ ਚੀਜਾਂ ਨਾ ਲਵੋ",
+        "ਆਪਣੇ ਆਪ ਨੂੰ ਗਰਮ ਰੱਖੋ",
+        "ਰੁਮਾਲ ਵਰਤੋ"
+      ]
+    },
+    "remedies": {
+      "en": [
+        "Drink hot soup",
+        "Inhale steam"
+      ],
+      "hi": [
+        "गर्म सूप पिएं",
+        "भाप लें"
+      ],
+      "pa": [
+        "ਗਰਮ ਸੂਪ ਪੀਓ",
+        "ਭਾਪ ਲਵੋ"
+      ]
+    }
+  },
+  "diarrhea": {
+    "synonyms": [
+      "diarrhea",
+      "दस्त",
+      "ਦਸਤ",
+      "loose motion",
+      "frequent stools"
+    ],
+    "mapped_term": "diarrhea",
+    "severity": "moderate",
+    "diagnosis": {
+      "en": "Infection or Food Poisoning",
+      "hi": "संक्रमण या फूड पॉइज़निंग",
+      "pa": "ਸੰਕਰਮਣ ਜਾਂ ਖਾਣੇ ਦੀ ਵਿਸ਼ਾਕਤਤਾ"
+    },
+    "precautions": {
+      "en": [
+        "Avoid street food",
+        "Drink boiled water"
+      ],
+      "hi": [
+        "बाजार का खाना न खाएं",
+        "उबला पानी पिएं"
+      ],
+      "pa": [
+        "ਬਾਜ਼ਾਰੀ ਭੋਜਨ ਤੋਂ ਬਚੋ",
+        "ਉਬਲਾ ਪਾਣੀ ਪੀਓ"
+      ]
+    },
+    "remedies": {
+      "en": [
+        "ORS",
+        "Eat bananas",
+        "Take probiotics"
+      ],
+      "hi": [
+        "ओआरएस लें",
+        "केला खाएं",
+        "प्रोबायोटिक लें"
+      ],
+      "pa": [
+        "ORS ਲਵੋ",
+        "ਕੇਲਾ ਖਾਓ",
+        "ਪ੍ਰੋਬਾਇਓਟਿਕ ਲਵੋ"
+      ]
+    }
+  },
+  "dengue": {
+    "synonyms": [
+      "dengue",
+      "डेंगू",
+      "ਡੈਂਗੂ",
+      "dengue fever"
+    ],
+    "mapped_term": "dengue",
+    "severity": "severe",
+    "diagnosis": {
+      "en": "Dengue Fever",
+      "hi": "डेंगू बुखार",
+      "pa": "ਡੈਂਗੂ ਬੁਖਾਰ"
+    },
+    "precautions": {
+      "en": [
+        "Avoid mosquito bites",
+        "Use mosquito nets"
+      ],
+      "hi": [
+        "मच्छरों से बचें",
+        "मच्छरदानी का इस्तेमाल करें"
+      ],
+      "pa": [
+        "ਮੱਛਰਾਂ ਤੋਂ ਬਚੋ",
+        "ਮੱਛਰਦਾਨੀ ਵਰਤੋ"
+      ]
+    },
+    "remedies": {
+      "en": [
+        "Drink papaya leaf juice",
+        "Rest",
+        "Stay hydrated"
+      ],
+      "hi": [
+        "पपीते के पत्तों का रस पिएं",
+        "आराम करें",
+        "हाइड्रेटेड रहें"
+      ],
+      "pa": [
+        "ਪਪੀਤੇ ਦੇ ਪੱਤਿਆਂ ਦਾ ਰਸ",
+        "ਆਰਾਮ ਕਰੋ",
+        "ਹਾਈਡਰੇਟ ਰਹੋ"
+      ]
+    }
+  },
+  "malaria": {
+    "synonyms": [
+      "malaria",
+      "मलेरिया",
+      "ਮਲੇਰੀਆ",
+      "malarial fever"
+    ],
+    "mapped_term": "malaria",
+    "severity": "severe",
+    "diagnosis": {
+      "en": "Malarial Infection",
+      "hi": "मलेरिया संक्रमण",
+      "pa": "ਮਲੇਰੀਆ ਸੰਕਰਮਣ"
+    },
+    "precautions": {
+      "en": [
+        "Use mosquito repellents",
+        "Avoid stagnant water"
+      ],
+      "hi": [
+        "मच्छर भगाने वाली दवा का प्रयोग करें",
+        "खड़े पानी से बचें"
+      ],
+      "pa": [
+        "ਮੱਛਰ ਭਜਾਉ ਦਵਾਈ ਵਰਤੋ",
+        "ਖੜੇ ਪਾਣੀ ਤੋਂ ਬਚੋ"
+      ]
+    },
+    "remedies": {
+      "en": [
+        "Consult a doctor",
+        "Take anti-malarial medication"
+      ],
+      "hi": [
+        "डॉक्टर से परामर्श लें",
+        "एंटी-मलेरियल दवा लें"
+      ],
+      "pa": [
+        "ਡਾਕਟਰ ਨੂੰ ਦਿਖਾਓ",
+        "ਐਂਟੀ-ਮਲੇਰੀਅਲ ਦਵਾਈ ਲਵੋ"
+      ]
+    }
+  },
+  "headache": {
+    "synonyms": [
+      "headache",
+      "सिरदर्द",
+      "ਸਿਰ ਦਰਦ",
+      "migraine",
+      "head pain",
+      "tension headache"
+    ],
+    "mapped_term": "headache",
+    "severity": "moderate",
+    "diagnosis": {
+      "en": "You may have a headache, which could be due to stress, dehydration, or eyestrain.",
+      "hi": "आपको सिरदर्द हो सकता है, जो तनाव, निर्जलीकरण, या आंखों के तनाव के कारण हो सकता है।",
+      "pa": "ਤੁਹਾਨੂੰ ਸਿਰ ਦਰਦ ਹੋ ਸਕਦਾ ਹੈ, ਜੋ ਤਣਾਅ, ਪਾਣੀ ਦੀ ਕਮੀ, ਜਾਂ ਅੱਖਾਂ ਦੇ ਤਣਾਅ ਦੇ ਕਾਰਨ ਹੋ ਸਕਦਾ ਹੈ।"
+    },
+    "precautions": {
+      "en": [
+        "Reduce screen time",
+        "Stay in a quiet, dark room",
+        "Avoid strong smells",
+        "Manage stress"
+      ],
+      "hi": [
+        "स्क्रीन टाइम कम करें",
+        "शांत, अंधेरे कमरे में रहें",
+        "तेज़ गंध से बचें",
+        "तनाव का प्रबंधन करें"
+      ],
+      "pa": [
+        "ਸਕਰੀਨ ਟਾਈਮ ਘਟਾਓ",
+        "ਸ਼ਾਂਤ, ਹਨੇਰੇ ਕਮਰੇ ਵਿੱਚ ਰਹੋ",
+        "ਤੇਜ਼ ਗੰਧ ਤੋਂ ਬਚੋ",
+        "ਤਣਾਅ ਨੂੰ ਕੰਟਰੋਲ ਕਰੋ"
+      ]
+    },
+    "remedies": {
+      "en": [
+        "Take pain relievers as directed",
+        "Apply cold or warm compress",
+        "Drink plenty of water",
+        "Practice relaxation techniques"
+      ],
+      "hi": [
+        "निर्देशानुसार दर्द निवारक लें",
+        "ठंडी या गर्म सिकाई करें",
+        "खूब पानी पिएं",
+        "आराम की तकनीकों का अभ्यास करें"
+      ],
+      "pa": [
+        "ਨਿਰਦੇਸ਼ ਅਨੁਸਾਰ ਦਰਦ ਨਿਵਾਰਕ ਲਓ",
+        "ਠੰਡੀ ਜਾਂ ਗਰਮ ਪੱਟੀ ਲਗਾਓ",
+        "ਬਹੁਤ ਸਾਰਾ ਪਾਣੀ ਪੀਓ",
+        "ਆਰਾਮ ਦੀਆਂ ਤਕਨੀਕਾਂ ਦਾ ਅਭਿਆਸ ਕਰੋ"
+      ]
+    }
+  },
+  "cough": {
+    "synonyms": [
+      "cough",
+      "खांसी",
+      "ਖੰਘ",
+      "dry cough",
+      "wet cough",
+      "hacking cough"
+    ],
+    "mapped_term": "cough",
+    "severity": "moderate",
+    "diagnosis": {
+      "en": "You may have a cough, which could be due to respiratory infection, allergies, or throat irritation.",
+      "hi": "आपको खांसी हो सकती है, जो श्वसन संक्रमण, एलर्जी, या गले में जलन के कारण हो सकती है।",
+      "pa": "ਤੁਹਾਨੂੰ ਖੰਘ ਹੋ ਸਕਦੀ ਹੈ, ਜੋ ਸਾਹ ਦੀ ਲਾਗ, ਐਲਰਜੀ, ਜਾਂ ਗਲੇ ਦੀ ਜਲਣ ਦੇ ਕਾਰਨ ਹੋ ਸਕਦੀ ਹੈ।"
+    },
+    "precautions": {
+      "en": [
+        "Stay hydrated",
+        "Avoid irritants like smoke",
+        "Use a humidifier",
+        "Cover mouth when coughing"
+      ],
+      "hi": [
+        "हाइड्रेटेड रहें",
+        "धुएं जैसे उत्तेजकों से बचें",
+        "ह्यूमिडिफायर का उपयोग करें",
+        "खांसते समय मुंह ढकें"
+      ],
+      "pa": [
+        "ਹਾਈਡਰੇਟ ਰਹੋ",
+        "ਧੂੰਏਂ ਵਰਗੇ ਜਲਣਸ਼ੀਲ ਪਦਾਰਥਾਂ ਤੋਂ ਬਚੋ",
+        "ਹਿਊਮੀਡੀਫਾਇਰ ਦੀ ਵਰਤੋਂ ਕਰੋ",
+        "ਖੰਘਣ 'ਤੇ ਮੂੰਹ ਢੱਕੋ"
+      ]
+    },
+    "remedies": {
+      "en": [
+        "Take honey and lemon tea",
+        "Use throat lozenges",
+        "Try steam inhalation",
+        "Gargle with salt water"
+      ],
+      "hi": [
+        "शहद और नींबू की चाय लें",
+        "गले की गोलियां उपयोग करें",
+        "भाप लेने का प्रयास करें",
+        "नमक वाले पानी से गरारे करें"
+      ],
+      "pa": [
+        "ਸ਼ਹਿਦ ਅਤੇ ਨਿੰਬੂ ਦੀ ਚਾਹ ਲਓ",
+        "ਗਲੇ ਦੀਆਂ ਗੋਲੀਆਂ ਵਰਤੋ",
+        "ਭਾਫ਼ ਲਓ",
+        "ਨਮਕ ਵਾਲੇ ਪਾਣੀ ਨਾਲ ਗਰਾਰੇ ਕਰੋ"
+      ]
+    }
+  },
+  "stomach_ache": {
+    "synonyms": [
+      "stomach ache",
+      "पेट दर्द",
+      "ਪੇਟ ਦਰਦ",
+      "abdominal pain",
+      "belly pain",
+      "tummy ache"
+    ],
+    "mapped_term": "stomach_ache",
+    "severity": "moderate",
+    "diagnosis": {
+      "en": "You may have a stomach ache, which could be due to indigestion, gas, or stomach infection.",
+      "hi": "आपको पेट दर्द हो सकता है, जो अपच, गैस, या पेट के संक्रमण के कारण हो सकता है।",
+      "pa": "ਤੁਹਾਨੂੰ ਪੇਟ ਦਰਦ ਹੋ ਸਕਦਾ ਹੈ, ਜੋ ਬਦਹਜ਼ਮੀ, ਗੈਸ, ਜਾਂ ਪੇਟ ਦਾ ਇਨਫੈਕਸ਼ਨ ਦੇ ਕਾਰਨ ਹੋ ਸਕਦਾ ਹੈ।"
+    },
+    "precautions": {
+      "en": [
+        "Eat smaller meals",
+        "Avoid spicy foods",
+        "Drink plenty of fluids",
+        "Rest after eating"
+      ],
+      "hi": [
+        "छोटे भोजन खाएं",
+        "मसालेदार खाद्य पदार्थों से बचें",
+        "खूब तरल पदार्थ पिएं",
+        "खाने के बाद आराम करें"
+      ],
+      "pa": [
+        "ਛੋਟੇ ਭੋਜਨ ਖਾਓ",
+        "ਮਸਾਲੇਦਾਰ ਭੋਜਨ ਤੋਂ ਬਚੋ",
+        "ਬਹੁਤ ਤਰਲ ਪਦਾਰਥ ਪੀਓ",
+        "ਖਾਣ ਦੇ ਬਾਅਦ ਆਰਾਮ ਕਰੋ"
+      ]
+    },
+    "remedies": {
+      "en": [
+        "Take antacids as directed",
+        "Apply warm compress",
+        "Try ginger tea",
+        "Avoid alcohol and smoking"
+      ],
+      "hi": [
+        "निर्देशानुसार एंटासिड लें",
+        "गर्म सिकाई लगाएं",
+        "अदरक की चाय पीने का प्रयास करें",
+        "शराब और धूम्रपान से बचें"
+      ],
+      "pa": [
+        "ਨਿਰਦੇਸ਼ ਅਨੁਸਾਰ ਐਂਟਾਸਿਡ ਲਓ",
+        "ਗਰਮ ਪੱਟੀ ਲਗਾਓ",
+        "ਅਦਰਕ ਦੀ ਚਾਹ ਪੀਓ",
+        "ਸ਼ਰਾਬ ਅਤੇ ਸਿਗਰਟਨੋਸ਼ੀ ਤੋਂ ਬਚੋ"
+      ]
+    }
+  },
+  "sore_throat": {
+    "synonyms": [
+      "sore throat",
+      "गले में खराश",
+      "ਗਲੇ ਵਿੱਚ ਖਰਾਸ਼",
+      "throat pain",
+      "pharyngitis",
+      "throat irritation",
+      "Sore Throat", "sore_throat"
+    ],
+    "mapped_term": "sore_throat",
+    "severity": "mild",
+    "diagnosis": {
+      "en": "You may have a sore throat, which could be due to viral infection, bacterial infection, or allergies.",
+      "hi": "आपको गले में खराश हो सकती है, जो वायरल संक्रमण, बैक्टीरियल संक्रमण, या एलर्जी के कारण हो सकती है।",
+      "pa": "ਤੁਹਾਨੂੰ ਗਲੇ ਵਿੱਚ ਖਰਾਸ਼ ਹੋ ਸਕਦੀ ਹੈ, ਜੋ ਵਾਇਰਲ ਇਨਫੈਕਸ਼ਨ, ਬੈਕਟੀਰੀਅਲ ਇਨਫੈਕਸ਼ਨ, ਜਾਂ ਐਲਰਜੀ ਦੇ ਕਾਰਨ ਹੋ ਸਕਦੀ ਹੈ।"
+    },
+    "precautions": {
+      "en": [
+        "Rest your voice",
+        "Stay hydrated",
+        "Avoid irritants",
+        "Use a humidifier"
+      ],
+      "hi": [
+        "अपनी आवाज़ को आराम दें",
+        "हाइड्रेटेड रहें",
+        "उत्तेजकों से बचें",
+        "ह्यूमिडिफायर का उपयोग करें"
+      ],
+      "pa": [
+        "ਆਪਣੀ ਆਵਾਜ਼ ਨੂੰ ਆਰਾਮ ਦਿਓ",
+        "ਹਾਈਡਰੇਟ ਰਹੋ",
+        "ਜਲਣਸ਼ੀਲ ਪਦਾਰਥਾਂ ਤੋਂ ਬਚੋ",
+        "ਹਿਊਮੀਡੀਫਾਇਰ ਦੀ ਵਰਤੋਂ ਕਰੋ"
+      ]
+    },
+    "remedies": {
+      "en": [
+        "Gargle with salt water",
+        "Use throat lozenges",
+        "Drink warm herbal tea with honey",
+        "Take pain relievers if needed"
+      ],
+      "hi": [
+        "नमक के पानी से गरारे करें",
+        "गले की गोलियों का उपयोग करें",
+        "शहद के साथ गर्म हर्बल चाय पिएं",
+        "आवश्यकता पड़ने पर दर्द निवारक लें"
+      ],
+      "pa": [
+        "ਨਮਕ ਵਾਲੇ ਪਾਣੀ ਨਾਲ ਗਰਾਰੇ ਕਰੋ",
+        "ਗਲੇ ਦੀਆਂ ਗੋਲੀਆਂ ਵਰਤੋ",
+        "ਸ਼ਹਿਦ ਨਾਲ ਗਰਮ ਜੜੀ-ਬੂਟੀ ਵਾਲੀ ਚਾਹ ਪੀਓ",
+        "ਜੇ ਲੋੜ ਹੋਵੇ ਤਾਂ ਦਰਦ ਨਿਵਾਰਕ ਲਓ"
+      ]
+    }
+  },
+  "rash": {
+    "synonyms": [
+      "rash",
+      "चकत्ते",
+      "ਦਾਣੇ",
+      "skin irritation",
+      "hives",
+      "skin eruption"
+    ],
+    "mapped_term": "rash",
+    "severity": "moderate",
+    "diagnosis": {
+      "en": "You may have a rash, which could be due to allergic reaction, infection, or skin irritation.",
+      "hi": "आपको चकत्ते हो सकते हैं, जो एलर्जिक प्रतिक्रिया, संक्रमण, या त्वचा जलन के कारण हो सकते हैं।",
+      "pa": "ਤੁਹਾਨੂੰ ਦਾਣੇ ਹੋ ਸਕਦੇ ਹਨ, ਜੋ ਐਲਰਜਿਕ ਪ੍ਰਤੀਕਿਰਿਆ, ਇਨਫੈਕਸ਼ਨ, ਜਾਂ ਚਮੜੀ ਦੀ ਜਲਣ ਦੇ ਕਾਰਨ ਹੋ ਸਕਦੇ ਹਨ।"
+    },
+    "precautions": {
+      "en": [
+        "Avoid scratching",
+        "Keep the area clean",
+        "Wear loose clothing",
+        "Identify and avoid triggers"
+      ],
+      "hi": [
+        "खुजली से बचें",
+        "क्षेत्र को साफ रखें",
+        "ढीले कपड़े पहनें",
+        "ट्रिगर्स की पहचान करें और उनसे बचें"
+      ],
+      "pa": [
+        "ਖੁਰਕਣ ਤੋਂ ਬਚੋ",
+        "ਖੇਤਰ ਨੂੰ ਸਾਫ਼ ਰੱਖੋ",
+        "ਢਿੱਲੇ ਕੱਪੜੇ ਪਹਿਨੋ",
+        "ਟ੍ਰਿਗਰਾਂ ਦੀ ਪਛਾਣ ਕਰੋ ਅਤੇ ਉਹਨਾਂ ਤੋਂ ਬਚੋ"
+      ]
+    },
+    "remedies": {
+      "en": [
+        "Apply calamine lotion",
+        "Take antihistamines as directed",
+        "Use cool compresses",
+        "Apply aloe vera gel"
+      ],
+      "hi": [
+        "कैलामाइन लोशन लगाएं",
+        "निर्देशानुसार एंटीहिस्टामाइन लें",
+        "ठंडी सिकाई का उपयोग करें",
+        "एलोवेरा जेल लगाएं"
+      ],
+      "pa": [
+        "ਕੈਲਾਮਾਈਨ ਲੋਸ਼ਨ ਲਗਾਓ",
+        "ਨਿਰਦੇਸ਼ ਅਨੁਸਾਰ ਐਂਟੀਹਿਸਟਾਮਾਈਨ ਲਓ",
+        "ਠੰਡੀ ਪੱਟੀ ਦੀ ਵਰਤੋਂ ਕਰੋ",
+        "ਏਲੋਵੇਰਾ ਜੈੱਲ ਲਗਾਓ"
+      ]
+    }
+  },
+  "lesions": {
+    "synonyms": [
+      "lesions",
+      "skin lesion",
+      "open sore",
+      "ulcer"
+    ],
+    "mapped_term": "lesions",
+    "severity": "moderate",
+    "diagnosis": {
+      "en": "You may have skin lesions, which could indicate an infection or a dermatological condition.",
+      "hi": "आपको त्वचा पर घाव हो सकते हैं, जो संक्रमण या त्वचा रोग का संकेत हो सकते हैं।",
+      "pa": "ਤੁਹਾਨੂੰ ਚਮੜੀ 'ਤੇ ਘਾਅ ਹੋ ਸਕਦੇ ਹਨ, ਜੋ ਕਿ ਇਨਫੈਕਸ਼ਨ ਜਾਂ ਚਮੜੀ ਦੀ ਬੀਮਾਰੀ ਦੀ ਨਿਸ਼ਾਨੀ ਹੋ ਸਕਦੀ ਹੈ।"
+    },
+    "precautions": {
+      "en": [
+        "Keep the area clean",
+        "Avoid touching or scratching",
+        "Use prescribed creams"
+      ],
+      "hi": [
+        "क्षेत्र को साफ रखें",
+        "छूने या खुजली करने से बचें",
+        "निर्देशानुसार क्रीम का उपयोग करें"
+      ],
+      "pa": [
+        "ਖੇਤਰ ਨੂੰ ਸਾਫ ਰੱਖੋ",
+        "ਛੂਹਣ ਜਾਂ ਖੁਰਕਣ ਤੋਂ ਬਚੋ",
+        "ਨਿਰਦੇਸ਼ ਅਨੁਸਾਰ ਕਰੀਮ ਵਰਤੋ"
+      ]
+    },
+    "remedies": {
+      "en": [
+        "Apply topical antibiotics",
+        "Consult a dermatologist",
+        "Avoid irritants"
+      ],
+      "hi": [
+        "टोपिकल एंटीबायोटिक लगाएं",
+        "त्वचा रोग विशेषज्ञ से परामर्श करें",
+        "उत्तेजक से बचें"
+      ],
+      "pa": [
+        "ਟੌਪਿਕਲ ਐਂਟੀਬਾਇਓਟਿਕ ਲਗਾਓ",
+        "ਚਮੜੀ ਦੇ ਡਾਕਟਰ ਨੂੰ ਦਿਖਾਓ",
+        "ਜਲਣਸ਼ੀਲ ਪਦਾਰਥਾਂ ਤੋਂ ਬਚੋ"
+      ]
+    }
+  },
+  "bruises": {
+    "synonyms": [
+      "bruises",
+      "blue mark",
+      "black and blue",
+      "contusion"
+    ],
+    "mapped_term": "bruises",
+    "severity": "mild",
+    "diagnosis": {
+      "en": "You may have a bruise, often caused by impact or injury.",
+      "hi": "आपको नीला निशान हो सकता है, जो आमतौर पर चोट के कारण होता है।",
+      "pa": "ਤੁਹਾਨੂੰ ਨੀਲਾ ਨਿਸ਼ਾਨ ਹੋ ਸਕਦਾ ਹੈ, ਜੋ ਆਮ ਤੌਰ 'ਤੇ ਚੋਟ ਕਾਰਨ ਹੁੰਦਾ ਹੈ।"
+    },
+    "precautions": {
+      "en": [
+        "Avoid further trauma",
+        "Rest the area",
+        "Elevate if swollen"
+      ],
+      "hi": [
+        "अधिक चोट से बचें",
+        "क्षेत्र को आराम दें",
+        "सूजन होने पर ऊँचा रखें"
+      ],
+      "pa": [
+        "ਹੋਰ ਚੋਟ ਤੋਂ ਬਚੋ",
+        "ਖੇਤਰ ਨੂੰ ਆਰਾਮ ਦਿਓ",
+        "ਸੂਜਨ ਹੋਣ ਤੇ ਉਚਾ ਰੱਖੋ"
+      ]
+    },
+    "remedies": {
+      "en": [
+        "Apply cold compress",
+        "Use pain relievers if needed",
+        "Allow time to heal"
+      ],
+      "hi": [
+        "ठंडी सिकाई करें",
+        "जरूरत होने पर दर्द निवारक लें",
+        "ठीक होने के लिए समय दें"
+      ],
+      "pa": [
+        "ਠੰਡੀ ਪੱਟੀ ਲਗਾਓ",
+        "ਲੋੜ ਹੋਣ 'ਤੇ ਦਰਦ ਨਿਵਾਰਕ ਲਓ",
+        "ਠੀਕ ਹੋਣ ਲਈ ਸਮਾਂ ਦਿਓ"
+      ]
+    }
+  },
+  "wounds": {
+    "synonyms": [
+      "wounds",
+      "cut",
+      "laceration",
+      "abrasion"
+    ],
+    "mapped_term": "wounds",
+    "severity": "moderate",
+    "diagnosis": {
+      "en": "You may have a wound, which could become infected if not treated properly.",
+      "hi": "आपको घाव हो सकता है, जो यदि ठीक से इलाज न किया जाए तो संक्रमित हो सकता है।",
+      "pa": "ਤੁਹਾਨੂੰ ਘਾਅ ਹੋ ਸਕਦਾ ਹੈ, ਜੋ ਠੀਕ ਇਲਾਜ ਨਾ ਹੋਣ 'ਤੇ ਸੰਕ੍ਰਮਿਤ ਹੋ ਸਕਦਾ ਹੈ।"
+    },
+    "precautions": {
+      "en": [
+        "Clean with antiseptic",
+        "Cover with sterile dressing",
+        "Monitor for signs of infection"
+      ],
+      "hi": [
+        "एंटीसेप्टिक से साफ करें",
+        "साफ पट्टी से ढकें",
+        "संक्रमण के लक्षणों की निगरानी करें"
+      ],
+      "pa": [
+        "ਐਂਟੀਸੈਪਟਿਕ ਨਾਲ ਸਾਫ਼ ਕਰੋ",
+        "ਸਾਫ਼ ਡ੍ਰੈੱਸਿੰਗ ਨਾਲ ਢੱਕੋ",
+        "ਸੰਕਰਮਣ ਦੇ ਲੱਛਣ ਵੇਖੋ"
+      ]
+    },
+    "remedies": {
+      "en": [
+        "Apply antibiotic ointment",
+        "Change dressing regularly",
+        "Seek medical attention if worsening"
+      ],
+      "hi": [
+        "एंटीबायोटिक मरहम लगाएं",
+        "नियमित रूप से पट्टी बदलें",
+        "बिगड़ने पर डॉक्टर से मिलें"
+      ],
+      "pa": [
+        "ਐਂਟੀਬਾਇਓਟਿਕ ਮਲਹਮ ਲਗਾਓ",
+        "ਨਿਯਮਤ ਤੌਰ 'ਤੇ ਪੱਟੀ ਬਦਲੋ",
+        "ਬੁਰਾ ਹੋਣ 'ਤੇ ਡਾਕਟਰ ਕੋਲ ਜਾਓ"
+      ]
+    }
+  },
+  "chickenpox": {
+    "synonyms": [
+      "chickenpox",
+      "varicella",
+      "blisters with fever"
+    ],
+    "mapped_term": "chickenpox",
+    "severity": "severe",
+    "diagnosis": {
+      "en": "You may have chickenpox, a viral infection that causes itchy blisters.",
+      "hi": "आपको चिकनपॉक्स हो सकता है, जो खुजली वाले फफोले पैदा करने वाला वायरल संक्रमण है।",
+      "pa": "ਤੁਹਾਨੂੰ ਚਿਕਨਪਾਕਸ ਹੋ ਸਕਦਾ ਹੈ, ਜੋ ਖੁਜਲੀ ਵਾਲੇ ਛਾਲਿਆਂ ਵਾਲਾ ਵਾਇਰਲ ਇਨਫੈਕਸ਼ਨ ਹੁੰਦਾ ਹੈ।"
+    },
+    "precautions": {
+      "en": [
+        "Isolate to prevent spreading",
+        "Avoid scratching",
+        "Keep fingernails short"
+      ],
+      "hi": [
+        "फैलाव से बचने के लिए अलग रहें",
+        "खुजली से बचें",
+        "नाखून छोटे रखें"
+      ],
+      "pa": [
+        "ਫੈਲਾਅ ਤੋਂ ਬਚਣ ਲਈ ਇਕੱਲੇ ਰਹੋ",
+        "ਖੁਰਕਣ ਤੋਂ ਬਚੋ",
+        "ਨੱਖ ਕੱਟੇ ਰੱਖੋ"
+      ]
+    },
+    "remedies": {
+      "en": [
+        "Apply calamine lotion",
+        "Take antihistamines for itching",
+        "Stay hydrated and rest"
+      ],
+      "hi": [
+        "कैलामाइन लोशन लगाएं",
+        "खुजली के लिए एंटीहिस्टामाइन लें",
+        "हाइड्रेटेड रहें और आराम करें"
+      ],
+      "pa": [
+        "ਕੈਲਾਮਾਈਨ ਲੋਸ਼ਨ ਲਗਾਓ",
+        "ਖੁਜਲੀ ਲਈ ਐਂਟੀਹਿਸਟਾਮਾਈਨ ਲਵੋ",
+        "ਹਾਈਡਰੇਟ ਰਹੋ ਅਤੇ ਆਰਾਮ ਕਰੋ"
+      ]
+    }
+  },
+  "ringworm": {
+    "synonyms": [
+      "ringworm",
+      "fungal infection",
+      "circular rash"
+    ],
+    "mapped_term": "ringworm",
+    "severity": "moderate",
+    "diagnosis": {
+      "en": "You may have ringworm, a fungal infection causing circular rashes.",
+      "hi": "आपको रिंगवर्म हो सकता है, जो गोल आकार के चकत्ते पैदा करने वाला फंगल संक्रमण है।",
+      "pa": "ਤੁਹਾਨੂੰ ਰਿੰਗਵਰਮ ਹੋ ਸਕਦਾ ਹੈ, ਜੋ ਗੋਲ ਰੂਪ ਦੇ ਦਾਣਿਆਂ ਵਾਲਾ ਫੰਗਲ ਇਨਫੈਕਸ਼ਨ ਹੁੰਦਾ ਹੈ।"
+    },
+    "precautions": {
+      "en": [
+        "Avoid sharing towels or clothes",
+        "Keep skin dry",
+        "Use antifungal powder"
+      ],
+      "hi": [
+        "तौलिया या कपड़े साझा करने से बचें",
+        "त्वचा को सूखा रखें",
+        "एंटीफंगल पाउडर का उपयोग करें"
+      ],
+      "pa": [
+        "ਟੌਲੀਆ ਜਾਂ ਕੱਪੜੇ ਸਾਂਝੇ ਨਾ ਕਰੋ",
+        "ਚਮੜੀ ਨੂੰ ਸੁੱਕਾ ਰੱਖੋ",
+        "ਐਂਟੀਫੰਗਲ ਪਾਊਡਰ ਵਰਤੋ"
+      ]
+    },
+    "remedies": {
+      "en": [
+        "Apply antifungal cream",
+        "Wash infected area regularly",
+        "Consult a doctor if severe"
+      ],
+      "hi": [
+        "एंटीफंगल क्रीम लगाएं",
+        "संक्रमित क्षेत्र को नियमित रूप से धोएं",
+        "गंभीर होने पर डॉक्टर से मिलें"
+      ],
+      "pa": [
+        "ਐਂਟੀਫੰਗਲ ਕਰੀਮ ਲਗਾਓ",
+        "ਸੰਕ੍ਰਮਿਤ ਖੇਤਰ ਨੂੰ ਨਿਯਮਤ ਤੌਰ 'ਤੇ ਧੋਵੋ",
+        "ਗੰਭੀਰ ਹੋਣ 'ਤੇ ਡਾਕਟਰ ਨੂੰ ਮਿਲੋ"
+      ]
+    }
+  },
+  "scarlet_fever": {
+    "synonyms": [
+      "scarlet fever",
+    "Scarlet Fever",
+    "scarlet_fever",
+    "red rash with fever",
+    "scarlatina"
+    ],
+    "mapped_term": "scarlet_fever",
+    "severity": "severe",
+    "diagnosis": {
+      "en": "You may have scarlet fever, a bacterial illness with red rash and sore throat.",
+      "hi": "आपको स्कार्लेट फीवर हो सकता है, जो लाल चकत्तों और गले की खराश वाला बैक्टीरियल संक्रमण है।",
+      "pa": "ਤੁਹਾਨੂੰ ਸਕਾਰਲੈਟ ਫੀਵਰ ਹੋ ਸਕਦਾ ਹੈ, ਜੋ ਲਾਲ ਚਮੜੀ ਅਤੇ ਗਲੇ ਦੀ ਖਰਾਸ਼ ਵਾਲਾ ਬੈਕਟੀਰੀਅਲ ਰੋਗ ਹੈ।"
+    },
+    "precautions": {
+      "en": [
+        "Avoid close contact with others",
+        "Wash hands frequently",
+        "Rest well"
+      ],
+      "hi": [
+        "दूसरों के संपर्क से बचें",
+        "बार-बार हाथ धोएं",
+        "अच्छी तरह आराम करें"
+      ],
+      "pa": [
+        "ਹੋਰਾਂ ਨਾਲ ਸੰਪਰਕ ਤੋਂ ਬਚੋ",
+        "ਬਾਰੰਬਾਰ ਹੱਥ ਧੋਵੋ",
+        "ਚੰਗੀ ਤਰ੍ਹਾਂ ਆਰਾਮ ਕਰੋ"
+      ]
+    },
+    "remedies": {
+      "en": [
+        "Consult a doctor for antibiotics",
+        "Use fever reducers",
+        "Gargle with salt water"
+      ],
+      "hi": [
+        "एंटीबायोटिक्स के लिए डॉक्टर से मिलें",
+        "बुखार कम करने की दवा लें",
+        "नमक वाले पानी से गरारे करें"
+      ],
+      "pa": [
+        "ਐਂਟੀਬਾਇਓਟਿਕ ਲਈ ਡਾਕਟਰ ਕੋਲ ਜਾਓ",
+        "ਤਾਪਮਾਨ ਘਟਾਉਣ ਵਾਲੀ ਦਵਾਈ ਲਵੋ",
+        "ਨਮਕ ਵਾਲੇ ਪਾਣੀ ਨਾਲ ਗਰਾਰੇ ਕਰੋ"
+      ]
+    }
+  },
+"fatigue": {
+  "synonyms": ["fatigue", "थकान", "ਥਕਾਵਟ", "tiredness", "exhaustion"],
+  "mapped_term": "fatigue",
+  "severity": "moderate",
+  "diagnosis": {
+    "en": "You may be experiencing fatigue, which could be due to overexertion, lack of sleep, or illness.",
+    "hi": "आप थकान महसूस कर सकते हैं, जो अधिक श्रम, नींद की कमी या बीमारी के कारण हो सकता है।",
+    "pa": "ਤੁਸੀਂ ਥਕਾਵਟ ਮਹਿਸੂਸ ਕਰ ਰਹੇ ਹੋ ਸਕਦੇ ਹੋ, ਜੋ ਕਿ ਥਕਾਵਟ, ਨੀਂਦ ਦੀ ਘਾਟ ਜਾਂ ਬੀਮਾਰੀ ਕਾਰਨ ਹੋ ਸਕਦੀ ਹੈ।"
+  },
+  "precautions": {
+    "en": ["Take rest", "Sleep well", "Avoid strenuous activity"],
+    "hi": ["आराम करें", "अच्छी नींद लें", "कठिन गतिविधियों से बचें"],
+    "pa": ["ਆਰਾਮ ਕਰੋ", "ਚੰਗੀ ਨੀਂਦ ਲਵੋ", "ਭਾਰੀ ਕਿਰਿਆਵਾਂ ਤੋਂ ਬਚੋ"]
+  },
+  "remedies": {
+    "en": ["Drink fluids", "Eat nutritious food", "Reduce screen time"],
+    "hi": ["तरल पदार्थ पिएं", "पौष्टिक भोजन लें", "स्क्रीन समय कम करें"],
+    "pa": ["ਤਰਲ ਪਦਾਰਥ ਪੀਓ", "ਪੌਸ਼ਟਿਕ ਭੋਜਨ ਖਾਓ", "ਸਕਰੀਨ ਸਮਾਂ ਘਟਾਓ"]
+  }
+},
+"nausea": {
+  "synonyms": ["nausea", "उल्टी जैसा महसूस होना", "ਉਲਟੀ ਆਉਣ ਦੀ ਫੀਲਿੰਗ", "sick feeling", "queasy"],
+  "mapped_term": "nausea",
+  "severity": "moderate",
+  "diagnosis": {
+    "en": "You may be experiencing nausea, which is often a sign of digestive upset or motion sickness.",
+    "hi": "आपको मतली हो सकती है, जो अक्सर पाचन संबंधी समस्या या मोशन सिकनेस का संकेत है।",
+    "pa": "ਤੁਸੀਂ ਉਲਟੀ ਆਉਣ ਦੀ ਫੀਲਿੰਗ ਮਹਿਸੂਸ ਕਰ ਰਹੇ ਹੋ ਸਕਦੇ ਹੋ, ਜੋ ਕਿ ਪਚਨ ਦੀ ਗੜਬੜ ਜਾਂ ਮੋਸ਼ਨ ਸਿਕਨਸ ਦਾ ਸੰਕੇਤ ਹੋ ਸਕਦਾ ਹੈ।"
+  },
+  "precautions": {
+    "en": ["Avoid strong smells", "Eat small meals", "Avoid oily food"],
+    "hi": ["तेज़ गंध से बचें", "छोटे भोजन खाएं", "तेलिय खाने से बचें"],
+    "pa": ["ਤੇਜ਼ ਗੰਧ ਤੋਂ ਬਚੋ", "ਛੋਟੇ ਭੋਜਨ ਖਾਓ", "ਤੇਲ ਵਾਲੀਆਂ ਚੀਜਾਂ ਤੋਂ ਬਚੋ"]
+  },
+  "remedies": {
+    "en": ["Drink ginger tea", "Use peppermint", "Rest in a cool place"],
+    "hi": ["अदरक की चाय पिएं", "पुदीने का उपयोग करें", "ठंडी जगह पर आराम करें"],
+    "pa": ["ਅਦਰਕ ਦੀ ਚਾਹ ਪੀਓ", "ਪੁਦੀਨਾ ਵਰਤੋ", "ਠੰਡੀ ਥਾਂ 'ਤੇ ਆਰਾਮ ਕਰੋ"]
+  }
+},
+"back_pain": {
+  "synonyms": ["back pain", "पीठ दर्द", "ਪਿੱਠ ਦਰਦ", "lower back ache"],
+  "mapped_term": "back_pain",
+  "severity": "moderate",
+  "diagnosis": {
+    "en": "You may be having back pain, possibly due to poor posture or muscle strain.",
+    "hi": "आपको पीठ दर्द हो सकता है, जो खराब मुद्रा या मांसपेशियों में खिंचाव के कारण हो सकता है।",
+    "pa": "ਤੁਹਾਨੂੰ ਪਿੱਠ ਦਰਦ ਹੋ ਸਕਦਾ ਹੈ, ਜੋ ਕਿ ਗਲਤ ਪੋਸਚਰ ਜਾਂ ਮਾਸਪੇਸ਼ੀ ਖਿੱਚ ਕਾਰਨ ਹੋ ਸਕਦਾ ਹੈ।"
+  },
+  "precautions": {
+    "en": ["Maintain good posture", "Avoid lifting heavy objects"],
+    "hi": ["सही मुद्रा बनाए रखें", "भारी वस्तुएं उठाने से बचें"],
+    "pa": ["ਠੀਕ ਪੋਸਚਰ ਰੱਖੋ", "ਭਾਰੀ ਚੀਜਾਂ ਚੁਕਣ ਤੋਂ ਬਚੋ"]
+  },
+  "remedies": {
+    "en": ["Apply warm compress", "Stretch gently", "Use pain relief gel"],
+    "hi": ["गर्म पट्टी लगाएं", "हल्का खिंचाव करें", "दर्द निवारक जेल का उपयोग करें"],
+    "pa": ["ਗਰਮ ਪੱਟੀ ਲਗਾਓ", "ਹੌਲੀ ਤਣਾਅ ਕਰੋ", "ਦਰਦ ਘਟਾਉਣ ਵਾਲੀ ਜੈੱਲ ਲਗਾਓ"]
+  }
+},
+"sneezing": {
+  "synonyms": ["sneezing", "छींक", "ਛੀਂਕ", "achoo", "nasal sneeze"],
+  "mapped_term": "sneezing",
+  "severity": "mild",
+  "diagnosis": {
+    "en": "Sneezing can be due to allergies or a mild cold.",
+    "hi": "छींक आना एलर्जी या हल्के जुकाम के कारण हो सकता है।",
+    "pa": "ਛੀਂਕ ਆਉਣਾ ਐਲਰਜੀ ਜਾਂ ਹਲਕੀ ਠੰਢ ਦੇ ਕਾਰਨ ਹੋ ਸਕਦਾ ਹੈ।"
+  },
+  "precautions": {
+    "en": ["Avoid dust", "Cover your mouth", "Use a mask if allergic"],
+    "hi": ["धूल से बचें", "मुंह ढकें", "एलर्जी होने पर मास्क पहनें"],
+    "pa": ["ਧੂੜ ਤੋਂ ਬਚੋ", "ਮੂੰਹ ਢੱਕੋ", "ਐਲਰਜੀ ਹੋਣ 'ਤੇ ਮਾਸਕ ਪਾਓ"]
+  },
+  "remedies": {
+    "en": ["Use antihistamines", "Keep room clean", "Try nasal saline"],
+    "hi": ["एंटीहिस्टामाइन लें", "कमरा साफ रखें", "नाक में सेलाइन डालें"],
+    "pa": ["ਐਂਟੀਹਿਸਟਾਮਾਈਨ ਲਵੋ", "ਕਮਰਾ ਸਾਫ ਰੱਖੋ", "ਨੱਕ 'ਚ ਸੇਲਾਈਨ ਵਰਤੋ"]
+  }
+},
+"body_ache": {
+  "synonyms": ["body ache", "शरीर में दर्द", "ਸਰੀਰ ਦਰਦ", "muscle pain","Body Ache", "body_ache"],
+  "mapped_term": "body_ache",
+  "severity": "moderate",
+  "diagnosis": {
+    "en": "You may be experiencing body ache, which can occur due to viral infection or fatigue.",
+    "hi": "आपको शरीर में दर्द हो सकता है, जो वायरल संक्रमण या थकान के कारण हो सकता है।",
+    "pa": "ਤੁਹਾਨੂੰ ਸਰੀਰ ਦਰਦ ਹੋ ਸਕਦਾ ਹੈ, ਜੋ ਵਾਇਰਲ ਇਨਫੈਕਸ਼ਨ ਜਾਂ ਥਕਾਵਟ ਕਾਰਨ ਹੋ ਸਕਦਾ ਹੈ।"
+  },
+  "precautions": {
+    "en": ["Avoid overexertion", "Rest well", "Stay hydrated"],
+    "hi": ["अत्यधिक मेहनत से बचें", "अच्छी तरह आराम करें", "हाइड्रेटेड रहें"],
+    "pa": ["ਵੱਧ ਮਿਹਨਤ ਤੋਂ ਬਚੋ", "ਚੰਗਾ ਆਰਾਮ ਕਰੋ", "ਹਾਈਡਰੇਟ ਰਹੋ"]
+  },
+  "remedies": {
+    "en": ["Take pain relievers", "Apply warm compress", "Drink herbal teas"],
+    "hi": ["दर्द निवारक लें", "गर्म पट्टी लगाएं", "हर्बल चाय पिएं"],
+    "pa": ["ਦਰਦ ਘਟਾਉਣ ਵਾਲੀ ਦਵਾਈ ਲਵੋ", "ਗਰਮ ਪੱਟੀ ਲਗਾਓ", "ਹਰਬਲ ਚਾਹ ਪੀਓ"]
+  }
+}
+}
