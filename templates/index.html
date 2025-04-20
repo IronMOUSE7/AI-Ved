@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Ved – Health Assistant</title>
+
+  <!-- Load TensorFlow.js first -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.11.0/dist/tf.min.js"></script>
+  <!-- Load the Teachable Machine Image model library -->
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.5/dist/teachablemachine-image.min.js"></script>
+
+  <!-- FontAwesome and Bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Select2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary-color: #0d6efd;
+      --secondary-color: #198754;
+      --dark-bg: #121212;
+      --dark-card: #1f1f1f;
+      --dark-text: #e1e1e1;
+      --dark-input-bg: #2a2a2a;
+      --dark-input-border: #444;
+      --dark-input-focus: #5a5a5a;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.light-mode {
+      background-color: #f8f9fa;
+      color: #212529;
+    }
+    body.dark-mode {
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
+    }
+    .dark-mode .form-control,
+    .dark-mode .form-select {
+      background-color: var(--dark-input-bg);
+      color: var(--dark-text);
+      border-color: var(--dark-input-border);
+    }
+    .dark-mode .form-control:focus,
+    .dark-mode .form-select:focus {
+      background-color: var(--dark-input-focus);
+      color: var(--dark-text);
+    }
+    .btn-dark-mode-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 10;
+    }
+    .image-preview-container {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    .image-preview-container img {
+      max-width: 100%;
+      height: auto;
+    }
+    .dark-mode .select2-container--default .select2-selection--multiple {
+      background-color: var(--dark-input-bg);
+      color: var(--dark-text);
+      border-color: var(--dark-input-border);
+    }
+    .dark-mode .select2-container--default .select2-selection--multiple .select2-selection__choice {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    .prediction-result {
+      margin-top: 10px;
+      padding: 8px 15px;
+      border-radius: 6px;
+      background-color: #e9f7ef;
+      border-left: 4px solid var(--secondary-color);
+      transition: all 0.3s;
+    }
+    .dark-mode .prediction-result {
+      background-color: #1e392a;
+      border-left: 4px solid var(--secondary-color);
+    }
+    /* Style for the Select2 dropdown */
+    .select2-container--default .select2-selection--multiple {
+      border-radius: 0.375rem;
+      border: 1px solid #ced4da;
+      min-height: 38px;
+    }
+    .dark-mode .select2-dropdown {
+      background-color: var(--dark-input-bg);
+      color: var(--dark-text);
+      border-color: var(--dark-input-border);
+    }
+    .dark-mode .select2-search__field {
+      background-color: var(--dark-input-bg);
+      color: var(--dark-text);
+    }
+    .dark-mode .select2-results__option {
+      background-color: var(--dark-input-bg);
+      color: var(--dark-text);
+    }
+    .dark-mode .select2-results__option--highlighted {
+      background-color: var(--primary-color);
+    }
+    /* Enhanced voice button styling */
+    .voice-btn {
+      background: linear-gradient(to right, #4776E6, #8E54E9);
+      border: none;
+      color: white;
+      padding: 8px 18px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+    .voice-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+      background: linear-gradient(to right, #3b5fe0, #7745d3);
+    }
+    .voice-btn i {
+      margin-right: 8px;
+    }
+    .dark-mode .voice-btn {
+      background: linear-gradient(to right, #3952b4, #7243c0);
+    }
+  </style>
+</head>
+<body class="light-mode">
+    <button class="btn btn-outline-secondary btn-dark-mode-toggle" id="darkModeToggle">
+      <i class="fas fa-moon"></i> <span data-label="dark_mode">Dark Mode</span>
+    </button>
+  
+    <div class="container text-center py-5">
+      <div><i class="fas fa-heartbeat header-icon"></i></div>
+      <h1 class="display-4 fw-bold text-primary mt-3 animate__animated animate__fadeInDown">AI-Ved</h1>
+      <p class="lead text-secondary" data-label="page_subtitle">Your Smart Rural Health Assistant</p>
+    </div>
+  
+    <div class="container py-5">
+      <div class="card shadow-lg rounded-4 animate-hover">
+        <div class="card-body px-5 py-4">
+          <form id="patientForm" action="/submit" method="POST" enctype="multipart/form-data">
+            <h4 class="mb-3"><i class="fas fa-user-md form-section-icon"></i> <span data-label="patient_info">Patient Information</span></h4>
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <label class="form-label" data-label="name">Name</label>
+                <input type="text" class="form-control" name="name" placeholder="Enter your name" />
+              </div>
+              <div class="col-md-4 mb-3">
+                <label class="form-label" data-label="age">Age</label>
+                <input type="number" class="form-control" name="age" placeholder="Enter your age" required />
+              </div>
+              <div class="col-md-4 mb-3">
+                <label class="form-label" data-label="gender">Gender</label>
+                <select class="form-select" name="gender" required>
+                  <option value="">Choose...</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" data-label="location">Location (Pincode / Village)</label>
+              <input type="text" class="form-control" name="location" placeholder="Enter your location" required />
+            </div>
+  
+            <hr class="my-4">
+            <h4 class="mb-3"><i class="fas fa-stethoscope form-section-icon"></i> <span data-label="symptoms_heading">Symptoms</span></h4>
+            <div class="mb-3">
+              <label class="form-label" data-label="symptoms">Select symptoms</label>
+              <select class="form-select" name="symptoms" id="symptomSelect" multiple required>
+                {% for symptom in symptoms %}
+                  <option value="{{ symptom.term }}">{{ symptom.label }}</option>
+                {% endfor %}
+              </select>
+              <small class="text-muted">Hold Ctrl (Windows) or Cmd (Mac) to select multiple</small>
+            </div>
+            <div class="mb-3">
+              <button type="button" class="voice-btn" onclick="startVoiceInput()">
+                <i class="fas fa-microphone"></i> Speak Symptoms
+              </button>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold" id="uploadLabel">
+                If you have any visible symptoms (like rashes, injuries, etc.), you can share a photo below:
+              </label>              
+            </div>
+            <div id="prediction-container" class="d-none prediction-result">
+              <p id="label-container" class="mb-0 fw-bold"></p>
+              <p class="mb-0 mt-1 text-muted small"><i class="fas fa-info-circle"></i> This symptom has been added to your list</p>
+            </div>
+            <div class="mb-3 text-center">
+              <button class="btn btn-outline-primary" onclick="showImageOptions()">📷 Choose Image Source</button>
+            </div>
+            
+            <!-- Option Modal -->
+            <div id="imageChoiceModal" class="text-center mt-2 d-none">
+              <button class="btn btn-secondary me-2" onclick="document.getElementById('imageUpload').click()">📁 Upload from Gallery</button>
+              <button class="btn btn-success" onclick="startWebcamCapture()">📸 Capture from Camera</button>
+            </div>
+            
+            <!-- Hidden file input -->
+            <input type="file" class="form-control d-none" name="image" id="imageUpload" accept="image/*" />
+            
+            <!-- Webcam container + preview -->
+            <div id="webcam-container" class="text-center mt-3"></div>
+            <div id="image-preview" class="mt-3 image-preview-container"></div>            
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary btn-lg px-5 mt-3 shadow-sm" data-label="submit_button">Get Advice</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>  
+
+  <!-- JS Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <script>
+    // Global variables
+    let model, labelContainer, maxPredictions;
+    const URL = "https://teachablemachine.withgoogle.com/models/49GcmH4hj/";
+    let selectedSymptoms = [];
+    
+    // Wait for the DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', async function() {
+      // Setup dark mode
+      setupDarkMode();
+      
+      // Initialize Select2
+      initializeSelect2();
+      
+      // Setup image upload
+      setupImageUpload();
+      
+      // Initialize Teachable Machine model
+      await initTeachableMachine();
+      
+      // Restore saved data
+      restoreSavedData();
+      
+      // Setup form submission
+      setupFormSubmission();
+    });
+    
+    // Setup dark mode toggling
+    function setupDarkMode() {
+      const toggleButton = document.getElementById("darkModeToggle");
+      const body = document.body;
+      
+      const isDarkMode = localStorage.getItem('darkMode') === 'true';
+      if (isDarkMode) {
+        body.classList.add("dark-mode");
+        body.classList.remove("light-mode");
+        toggleButton.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+      }
+      
+      toggleButton.addEventListener("click", function() {
+        body.classList.toggle("dark-mode");
+        body.classList.toggle("light-mode");
+        const isDarkMode = body.classList.contains("dark-mode");
+        localStorage.setItem('darkMode', isDarkMode);
+        toggleButton.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i> Light Mode' : '<i class="fas fa-moon"></i> Dark Mode';
+        
+        // Refresh Select2 to update its theme
+        $('#symptomSelect').select2('destroy').select2({
+          placeholder: "Select your symptoms",
+          width: '100%',
+          tags: true,
+          createTag: function(params) {
+            return {
+              id: params.term,
+              text: params.term,
+              newTag: true
+            };
+          }
+        });
+      });
+    }
+    
+    // Initialize Select2
+    function initializeSelect2() {
+      $('#symptomSelect').select2({
+        placeholder: "Select your symptoms",
+        width: '100%',
+        tags: true, // Allow custom tags
+        createTag: function(params) {
+          return {
+            id: params.term,
+            text: params.term,
+            newTag: true
+          };
+        }
+      });
+      
+      // Listen for changes in the selected symptoms
+      $('#symptomSelect').on('change', function() {
+        selectedSymptoms = $(this).val() || [];
+        localStorage.setItem('selectedSymptoms', JSON.stringify(selectedSymptoms));
+      });
+    }
+    
+    // Initialize Teachable Machine
+    async function initTeachableMachine() {
+      console.log("Initializing Teachable Machine...");
+      
+      try {
+        if (typeof window.tmImage !== 'undefined') {
+          console.log("tmImage is available");
+          await loadModel();
+        } else {
+          console.error("tmImage is not defined. Teachable Machine library might not be loaded properly.");
+          // Try to load the library again
+          const script = document.createElement('script');
+          script.src = "https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.5/dist/teachablemachine-image.min.js";
+          script.onload = async function() {
+            console.log("Teachable Machine library loaded dynamically");
+            if (typeof window.tmImage !== 'undefined') {
+              await loadModel();
+            } else {
+              console.error("Still cannot access tmImage after dynamically loading the library");
+            }
+          };
+          script.onerror = function() {
+            console.error("Failed to load Teachable Machine library dynamically");
+          };
+          document.head.appendChild(script);
+        }
+      } catch (error) {
+        console.error("Error initializing Teachable Machine:", error);
+      }
+    }
+    
+    // Load the Teachable Machine model
+    async function loadModel() {
+      try {
+        console.log("Loading model...");
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+        
+        model = await window.tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+        
+        labelContainer = document.getElementById("label-container");
+        
+        console.log("Model loaded with", maxPredictions, "classes");
+        
+        // If we have saved image data, process it
+        const savedImageData = localStorage.getItem("uploadedImageData");
+        if (savedImageData) {
+          const img = new Image();
+          img.src = savedImageData;
+          img.onload = function() {
+            const previewContainer = document.getElementById("image-preview");
+            previewContainer.innerHTML = '';
+            previewContainer.appendChild(img);
+            
+            if (model) {
+              predictImage(img).catch(function(error) {
+                console.error("Error predicting saved image:", error);
+              });
+            }
+          };
+        }
+      } catch (error) {
+        console.error("Error loading model:", error);
+      }
+    }
+    
+    function showImageOptions() {
+      document.getElementById("imageChoiceModal").classList.remove("d-none");
+    }
+
+    // Handle Upload from File
+    document.getElementById("imageUpload").addEventListener("change", function(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const img = new Image();
+        img.src = e.target.result;
+        img.onload = function () {
+          const preview = document.getElementById("image-preview");
+          preview.innerHTML = "";
+          preview.appendChild(img);
+          localStorage.setItem("uploadedImageData", e.target.result);
+
+          if (model) predictImage(img);
+        };
+      };
+      reader.readAsDataURL(file);
+    });
+
+    // Setup image upload and prediction
+    function setupImageUpload() {
+      const imageUpload = document.getElementById('imageUpload');
+      
+      imageUpload.addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+        
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = new Image();
+          img.src = e.target.result;
+          localStorage.setItem("uploadedImageData", e.target.result);
+          
+          img.onload = function() {
+            const previewContainer = document.getElementById("image-preview");
+            previewContainer.innerHTML = '';
+            previewContainer.appendChild(img);
+
+            document.getElementById("uploadLabel").style.display = "block";
+            
+            if (model) {
+              predictImage(img).catch(function(error) {
+                console.error("Error predicting image:", error);
+              });
+            } else {
+              console.warn("Model not loaded yet, prediction skipped");
+            }
+          };
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+    
+    // Predict the image and add the detected symptom to the Select2 dropdown
+    async function predictImage(imageElement) {
+      try {
+        if (!model) {
+          console.error("Model not loaded yet");
+          return;
+        }
+        
+        const prediction = await model.predict(imageElement, false);
+        prediction.sort(function(a, b) {
+          return b.probability - a.probability;
+        });
+        
+        const topPrediction = prediction[0];
+        const predictedSymptom = topPrediction.className;
+        const probability = (topPrediction.probability * 100).toFixed(2);
+        
+        // Update the label container
+        labelContainer.innerHTML = `${predictedSymptom} - ${probability}%`;
+        document.getElementById('prediction-container').classList.remove('d-none');
+        
+        // Save the prediction
+        localStorage.setItem("predictedLabel", `${predictedSymptom} - ${probability}%`);
+        localStorage.setItem("predictedSymptom", predictedSymptom);
+        
+        // Add the predicted symptom to the Select2 dropdown if not already selected
+        const select = $('#symptomSelect');
+        const currentValues = select.val() || [];
+        
+        if (!currentValues.includes(predictedSymptom)) {
+          // Check if the option already exists
+          if (select.find(`option[value="${predictedSymptom}"]`).length === 0) {
+            // Create a new option
+            const newOption = new Option(predictedSymptom, predictedSymptom, true, true);
+            select.append(newOption);
+          } else {
+            // Select the existing option
+            select.val([...currentValues, predictedSymptom]).trigger('change');
+          }
+        }
+        
+        // Trigger change event for Select2 to update
+        select.trigger('change');
+        
+        return prediction;
+      } catch (error) {
+        console.error("Error predicting image:", error);
+        return null;
+      }
+    }
+    
+    async function startWebcamCapture() {
+      const webcamContainer = document.getElementById("webcam-container");
+      webcamContainer.innerHTML = "";
+
+      const video = document.createElement("video");
+      video.autoplay = true;
+      video.playsInline = true;
+      video.width = 300;
+      video.height = 300;
+      webcamContainer.appendChild(video);
+
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      video.srcObject = stream;
+
+      // Capture Button
+      const captureBtn = document.createElement("button");
+      captureBtn.className = "btn btn-danger mt-2";
+      captureBtn.innerText = "📸 Capture";
+      const buttonWrapper = document.createElement("div");
+      buttonWrapper.className = "text-center mt-2";
+      buttonWrapper.appendChild(captureBtn);
+      webcamContainer.appendChild(buttonWrapper);
+
+
+      captureBtn.onclick = () => {
+        const canvas = document.createElement("canvas");
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(video, 0, 0);
+
+        const imgData = canvas.toDataURL("image/png");
+        const img = new Image();
+        img.src = imgData;
+
+        const preview = document.getElementById("image-preview");
+        preview.innerHTML = "";
+        preview.appendChild(img);
+        localStorage.setItem("capturedImage", imgData);  // consistent with result.html
+
+        document.getElementById("uploadLabel").style.display = "none";
+
+        if (model) predictImage(img);
+
+        // Stop stream
+        stream.getTracks().forEach(track => track.stop());
+        webcamContainer.innerHTML = ""; // Remove video
+      };
+    }
+    
+    // Restore saved data
+    function restoreSavedData() {
+      // Restore selected symptoms
+      const savedSymptoms = JSON.parse(localStorage.getItem('selectedSymptoms') || '[]');
+      if (savedSymptoms.length > 0) {
+        const select = $('#symptomSelect');
+        
+        // Add any missing options
+        savedSymptoms.forEach(symptom => {
+          if (select.find(`option[value="${symptom}"]`).length === 0) {
+            const newOption = new Option(symptom, symptom, true, true);
+            select.append(newOption);
+          }
+        });
+        
+        // Set the values
+        select.val(savedSymptoms).trigger('change');
+      }
+      
+      // Restore predicted symptom
+      const predictedLabel = localStorage.getItem('predictedLabel');
+      if (predictedLabel) {
+        labelContainer.innerHTML = predictedLabel;
+        document.getElementById('prediction-container').classList.remove('d-none');
+      }
+      
+      // Restore uploaded image
+      const savedImageData = localStorage.getItem('uploadedImageData');
+      if (savedImageData) {
+        const img = new Image();
+        img.src = savedImageData;
+        img.onload = function() {
+          const previewContainer = document.getElementById('image-preview');
+          previewContainer.innerHTML = '';
+          previewContainer.appendChild(img);
+        };
+      }
+      
+      // Restore captured image
+      const capturedImage = localStorage.getItem('capturedImage');
+      if (capturedImage && !savedImageData) {
+        const img = new Image();
+        img.src = capturedImage;
+        img.onload = function() {
+          const previewContainer = document.getElementById('image-preview');
+          previewContainer.innerHTML = '';
+          previewContainer.appendChild(img);
+        };
+      }
+    }
+    
+    // Setup form submission
+    function setupFormSubmission() {
+      document.getElementById('patientForm').addEventListener('submit', function() {
+        // Clear all saved data
+        localStorage.removeItem('uploadedImageData');
+        localStorage.removeItem('predictedLabel');
+        localStorage.removeItem('predictedSymptom');
+        localStorage.removeItem('selectedSymptoms');
+        localStorage.removeItem('capturedImage');
+      });
+    }
+    
+    // Voice input function from the second file
+    function startVoiceInput() {
+      const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+      const langPref = localStorage.getItem("preferredLanguage") || "en";
+      recognition.lang = langPref === "hi" ? "hi-IN" : langPref === "pa" ? "pa-IN" : "en-US";
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      recognition.onresult = function (event) {
+        const spokenText = event.results[0][0].transcript.toLowerCase();
+        const dropdown = document.getElementById("symptomSelect");
+        let found = false;
+
+        for (let option of dropdown.options) {
+          if (spokenText.includes(option.text.toLowerCase()) || spokenText.includes(option.value.toLowerCase())) {
+            option.selected = true;
+            found = true;
+          }
+        }
+
+        // Trigger Select2 refresh if used
+        $('#symptomSelect').trigger('change');
+
+        if (found) {
+          alert("✅ Selected symptom from speech: " + spokenText);
+        } else {
+          alert("⚠️ Couldn't match that symptom. Try again.");
+        }
+      };
+
+      recognition.onerror = function (event) {
+        alert("Speech recognition error: " + event.error);
+      };
+
+      recognition.start();
+    }
+  </script>
+  <script>
+    const language = localStorage.getItem("preferredLanguage") || "en";
+    fetch("/static/labels.json")
+      .then(res => res.json())
+      .then(labels => {
+        document.querySelectorAll("[data-label]").forEach(el => {
+          const key = el.getAttribute("data-label");
+          if (labels[key] && labels[key][language]) {
+            el.innerText = labels[key][language];
+          }
+        });
+      });
+  </script>
+</body>
+</html>

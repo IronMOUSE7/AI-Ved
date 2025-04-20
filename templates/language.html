@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Select Language – AI-Ved</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts + Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    :root {
+      --primary-color: #0d6efd;
+      --secondary-color: #198754;
+      --dark-bg: #121212;
+      --dark-card: #1f1f1f;
+      --dark-text: #e1e1e1;
+      --dark-input-bg: #2a2a2a;
+      --dark-input-border: #444;
+      --dark-input-focus: #5a5a5a;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.light-mode {
+      background-color: #f8f9fa;
+      color: #212529;
+    }
+
+    body.dark-mode {
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
+    }
+
+    .card {
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .card.light-mode {
+      background-color: #ffffff;
+      color: #212529;
+    }
+
+    .card.dark-mode {
+      background-color: var(--dark-card);
+      color: var(--dark-text);
+    }
+
+    .form-control, .form-select {
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+
+    .light-mode .form-control, .light-mode .form-select {
+      background-color: #ffffff;
+      color: #212529;
+      border-color: #ced4da;
+    }
+
+    .dark-mode .form-control, .dark-mode .form-select {
+      background-color: var(--dark-input-bg);
+      color: var(--dark-text);
+      border-color: var(--dark-input-border);
+    }
+
+    .dark-mode .form-control:focus, .dark-mode .form-select:focus {
+      background-color: var(--dark-input-focus);
+      border-color: var(--primary-color);
+      color: var(--dark-text);
+    }
+
+    .btn-dark-mode-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 10;
+    }
+
+    .btn-primary, .btn-success {
+      transition: all 0.3s;
+    }
+
+    .dark-mode .btn-success {
+      background-color: #198754;
+      border-color: #198754;
+    }
+
+    .dark-mode .btn-success:hover {
+      background-color: #146c43;
+      border-color: #146c43;
+    }
+
+    .header-icon {
+      font-size: 4rem;
+      color: var(--secondary-color);
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      transition: transform 0.2s;
+    }
+
+    .animate-hover:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .language-option {
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .language-option:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .language-option.selected {
+      border: 2px solid var(--primary-color);
+      background-color: rgba(13, 110, 253, 0.1);
+    }
+
+    .dark-mode .language-option.selected {
+      background-color: rgba(13, 110, 253, 0.2);
+    }
+
+    .language-flag {
+      width: 30px;
+      height: 30px;
+      margin-right: 12px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body class="light-mode">
+
+  <!-- Dark Mode Toggle -->
+  <button class="btn btn-outline-secondary btn-dark-mode-toggle" id="darkModeToggle">
+    <i class="fas fa-moon"></i> Dark Mode
+  </button>
+
+  <!-- Header Section -->
+  <div class="container text-center py-5">
+    <div>
+      <i class="fas fa-language header-icon animate__animated animate__pulse"></i>
+    </div>
+    <h1 class="display-4 fw-bold text-primary mt-3 animate__animated animate__fadeInDown">AI-Ved</h1>
+    <p class="lead text-secondary">Choose Your Language Preference</p>
+  </div>
+
+  <div class="container py-3">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <!-- Language Selection Card -->
+        <div class="card shadow-lg rounded-4 animate-hover">
+          <div class="card-body px-4 py-4">
+            <h4 class="mb-4 text-center">
+              <i class="fas fa-globe-asia"></i> Select Your Language
+            </h4>
+
+            <form id="languageForm">
+              <div id="languageOptions" class="mb-4">
+                <!-- Language options will be dynamically populated -->
+              </div>
+
+              <div class="d-grid mt-4">
+                <button type="submit" class="btn btn-success btn-lg animate__animated animate__fadeIn" id="continueBtn">Continue</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Recently Used Languages -->
+        <div class="mt-4 text-center" id="recentLanguages">
+          <h6>Recently used:</h6>
+          <div class="d-flex justify-content-center flex-wrap" id="recentLanguagesList">
+            <!-- Will be populated dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Language data with flags
+    const languages = [
+  { code: "en", name: "English", flag: "🇬🇧" },
+  { code: "hi", name: "हिन्दी", flag: "🇮🇳" },
+  { code: "pa", name: "ਪੰਜਾਬੀ", flag: "🇮🇳" }
+];
+
+
+    // Populate language options
+    const languageOptions = document.getElementById("languageOptions");
+    let selectedLanguage = null;
+
+    function createLanguageOption(lang) {
+      const option = document.createElement("div");
+      option.className = "language-option light-mode";
+      option.dataset.language = lang.code;
+      option.innerHTML = `
+        <span class="language-flag">${lang.flag}</span>
+        <span>${lang.name}</span>
+      `;
+      option.addEventListener("click", function() {
+        // Remove selection from all options
+        document.querySelectorAll(".language-option").forEach(opt => {
+          opt.classList.remove("selected");
+        });
+        // Select this option
+        this.classList.add("selected");
+        selectedLanguage = this.dataset.language;
+        
+        // Enable continue button
+        document.getElementById("continueBtn").classList.remove("disabled");
+        
+        // Add animation to continue button
+        document.getElementById("continueBtn").classList.add("animate__pulse");
+      });
+      return option;
+    }
+
+    // Populate main language options
+    languages.forEach(lang => {
+      languageOptions.appendChild(createLanguageOption(lang));
+    });
+
+    // Handle form submission
+    document.getElementById("languageForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      if (selectedLanguage) {
+        // Save to localStorage
+        localStorage.setItem("preferredLanguage", selectedLanguage);
+        
+        // Add to recent languages
+        let recentLangs = JSON.parse(localStorage.getItem("recentLanguages") || "[]");
+        if (!recentLangs.includes(selectedLanguage)) {
+          recentLangs.unshift(selectedLanguage);
+          if (recentLangs.length > 3) recentLangs.pop();
+          localStorage.setItem("recentLanguages", JSON.stringify(recentLangs));
+        }
+        
+        window.location.href = "/login";
+      }
+    });
+
+    // Populate recent languages
+    function loadRecentLanguages() {
+      const recentLangs = JSON.parse(localStorage.getItem("recentLanguages") || "[]");
+      const recentList = document.getElementById("recentLanguagesList");
+      
+      if (recentLangs.length === 0) {
+        document.getElementById("recentLanguages").style.display = "none";
+        return;
+      }
+      
+      recentList.innerHTML = "";
+      recentLangs.forEach(langCode => {
+        const lang = languages.find(l => l.code === langCode);
+        if (lang) {
+          const btn = document.createElement("button");
+          btn.className = "btn btn-sm btn-outline-secondary m-1";
+          btn.textContent = lang.name;
+          btn.addEventListener("click", function() {
+            selectedLanguage = langCode;
+            document.getElementById("languageForm").dispatchEvent(new Event("submit"));
+          });
+          recentList.appendChild(btn);
+        }
+      });
+    }
+
+    // Dark Mode Toggle
+    const toggleButton = document.getElementById("darkModeToggle");
+    const body = document.body;
+
+    // Check saved preference on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      // Load recent languages
+      loadRecentLanguages();
+      
+      // Initialize continue button as disabled
+      document.getElementById("continueBtn").classList.add("disabled");
+      
+      const isDarkMode = localStorage.getItem('darkMode') === 'true';
+      if (isDarkMode) {
+        body.classList.add("dark-mode");
+        body.classList.remove("light-mode");
+        toggleButton.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+        
+        // Update card and form elements dynamically
+        const cards = document.querySelectorAll('.card, .language-option');
+        const formControls = document.querySelectorAll('.form-control, .form-select');
+
+        cards.forEach(card => {
+          card.classList.add('dark-mode');
+          card.classList.remove('light-mode');
+        });
+
+        formControls.forEach(input => {
+          input.classList.add('dark-mode');
+          input.classList.remove('light-mode');
+        });
+      }
+      
+      // Check if user has previously selected a language
+      const prevLang = localStorage.getItem("preferredLanguage");
+      if (prevLang) {
+        const langOption = document.querySelector(`.language-option[data-language="${prevLang}"]`);
+        if (langOption) {
+          langOption.click();
+        }
+      }
+    });
+
+    toggleButton.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      body.classList.toggle("light-mode");
+
+      const isDarkMode = body.classList.contains("dark-mode");
+      // Save preference to localStorage
+      localStorage.setItem('darkMode', isDarkMode);
+      
+      toggleButton.innerHTML = isDarkMode
+        ? '<i class="fas fa-sun"></i> Light Mode'
+        : '<i class="fas fa-moon"></i> Dark Mode';
+
+      // Update card and form elements dynamically
+      const cards = document.querySelectorAll('.card, .language-option');
+      const formControls = document.querySelectorAll('.form-control, .form-select');
+
+      cards.forEach(card => {
+        card.classList.toggle('dark-mode', isDarkMode);
+        card.classList.toggle('light-mode', !isDarkMode);
+      });
+
+      formControls.forEach(input => {
+        input.classList.toggle('dark-mode', isDarkMode);
+        input.classList.toggle('light-mode', !isDarkMode);
+      });
+    });
+  </script>
+  <script>
+    function setLanguage(langCode) {
+        localStorage.setItem("preferredLanguage", langCode);
+        window.location.href = "/login";  // redirect to login after language is selected
+    }
+    </script>
+    
+</body>
+</html>
